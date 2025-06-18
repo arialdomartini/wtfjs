@@ -118,7 +118,7 @@ Lo scopo principale di questo elenco è quello di raccogliere alcuni esempi stra
 
 Se sei un principiante puoi utilizzare questi appunti per approfondire JavaScript. Spero che questi appunti ti motivino a leggerne le specifiche.
 
-Se sei uno sviluppatore senior, considera questi esempi come un'ottimo punto di riferimento per tutte quelle stranezze e stramberie del tuo amato JavaScript.
+Se sei uno sviluppatore senior, considera questi esempi come un ottimo punto di riferimento per tutte quelle stranezze e stramberie del tuo amato JavaScript.
 
 Ad ogni modo, leggilo. Probabilmente imparerai qualcosa di nuovo.
 
