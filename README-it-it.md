@@ -543,7 +543,7 @@ parseInt("f*ck"); // -> NaN
 parseInt("f*ck", 16); // -> 15
 ```
 
-**💡 Spiegazione:** Questo avviene perchè `parseInt` continuerà a svolgere il parsing carattere per carattere fino a che non trova un carattere che non riconosce. La `f` in `'f*ck'` è la rappresentazione esadecimale di `15`.
+**💡 Spiegazione:** Questo avviene perché `parseInt` continuerà a svolgere il parsing carattere per carattere fino a che non trova un carattere che non riconosce. La `f` in `'f*ck'` è la rappresentazione esadecimale di `15`.
 
 Svolgere il parsing di `Infinity` a integer è qualcosa di...
 
@@ -782,7 +782,7 @@ Ovviamente possiamo estendere l'oggetto `Number` così come ogni altro oggetto i
 
 ### 💡 Spiegazione:
 
-Perchè funziona in questo modo? Beh, il problema è nella prima parte dell'espressione. Ecco come funziona:
+Perché funziona in questo modo? Beh, il problema è nella prima parte dell'espressione. Ecco come funziona:
 
 ```js
 1 < 2 < 3; // 1 < 2 -> true
@@ -1018,7 +1018,7 @@ c[c][c]('console.log("WTF?")')(); // > WTF?
 
 ### 💡 Spiegazione:
 
-Perchè funziona così? Qui stiamo utilizzando le _Computed property name_. Quando passiamo un oggetto tra parentesi quadre, forza la conversione di quell'oggetto a stringa, quindi otteniamo la proprietà `'[object Object]'` e il valore `{}`.
+Perché funziona così? Qui stiamo utilizzando le _Computed property name_. Quando passiamo un oggetto tra parentesi quadre, forza la conversione di quell'oggetto a stringa, quindi otteniamo la proprietà `'[object Object]'` e il valore `{}`.
 
 Possiamo realizzare un "brackets hell" in questo modo:
 
@@ -1048,7 +1048,7 @@ Come sappiamo, i tipi primitivi non hanno prototipi. Però, se proviamo ad otten
 
 ### 💡 Spiegazione:
 
-Questo accade perchè quando qualcosa non ha un prototype, verrà inserito in un oggetto wrapper con un metodo `ToObject`. Quindi, passo passo:
+Questo accade perché quando qualcosa non ha un prototype, verrà inserito in un oggetto wrapper con un metodo `ToObject`. Quindi, passo passo:
 
 ```js
 (1)
@@ -1091,7 +1091,7 @@ Abbiamo definito un oggetto con una proprietà `Object` usando la _Shorthand pro
 }
 ```
 
-Quindi abbiamo passato questo oggetto al template literal, seguirà la chiamata al metodo `toString` per quell'oggetto. Ecco perchè otteniamo la stringa `'[object Object]'`.
+Quindi abbiamo passato questo oggetto al template literal, seguirà la chiamata al metodo `toString` per quell'oggetto. Ecco perché otteniamo la stringa `'[object Object]'`.
 
 - [**12.2.9** Template Literals](https://www.ecma-international.org/ecma-262/#sec-template-literals)
 - [Object initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer) at MDN
@@ -1141,7 +1141,7 @@ Si possono realizzare esempi interessanti utilizzando l'operatore di spreading e
 
 ### 💡 Spiegazione:
 
-Perchè `3`? Quando utilizziamo [l'operatore di spread](http://www.ecma-international.org/ecma-262/6.0/#sec-array-initializer), viene chiamato il metodo `@@iterator`, e l'iteratore che viene restituito viene utilizzato per ottenere i valori sui quali iterare. L'iteratore di default per le stringhe separa la stringa in caratteri. Dopo lo spreading, vengono inseriti questi valori in un array. Quindi viene svolto nuovamente lo spread sull'array e il risultato viene nuovamente inserito al suo interno.
+Perché `3`? Quando utilizziamo [l'operatore di spread](http://www.ecma-international.org/ecma-262/6.0/#sec-array-initializer), viene chiamato il metodo `@@iterator`, e l'iteratore che viene restituito viene utilizzato per ottenere i valori sui quali iterare. L'iteratore di default per le stringhe separa la stringa in caratteri. Dopo lo spreading, vengono inseriti questi valori in un array. Quindi viene svolto nuovamente lo spread sull'array e il risultato viene nuovamente inserito al suo interno.
 
 La stringa `'...'` è composta da tre caratteri `.`, quindi la dimensione dell'array risultante è `3`.
 
@@ -1405,7 +1405,7 @@ f(); // -> undefined
 
 ### 💡 Spiegazione:
 
-Potresti aspettarti `{}` anzichè `undefined`. Questo è perchè le parentesi graffe fanno parte della sintassi per le arrow functions, quindi `f` restituirà undefined. È comunque possibile restituire l'oggetto `{}` direttamente da una arrow function, racchiudendo il valore di ritorno tra parentesi.
+Potresti aspettarti `{}` anzichè `undefined`. Questo è perché le parentesi graffe fanno parte della sintassi per le arrow functions, quindi `f` restituirà undefined. È comunque possibile restituire l'oggetto `{}` direttamente da una arrow function, racchiudendo il valore di ritorno tra parentesi.
 
 ```js
 let f = () => ({});
@@ -1510,7 +1510,7 @@ foo; // -> {n: 2}
 bar; // -> {n: 1, x: {n: 2}}
 ```
 
-Da destra a sinistra, `{n: 2}` viene assegnato a foo, e il risultato di questo assegnamento `{n: 2}` viene assegnato a foo.x, ecco perchè bar è `{n: 1, x: {n: 2}}` in quanto bar è un riferimento a foo. Ma perchè foo.x è undefined mentre bar.x non lo è?
+Da destra a sinistra, `{n: 2}` viene assegnato a foo, e il risultato di questo assegnamento `{n: 2}` viene assegnato a foo.x, ecco perché bar è `{n: 1, x: {n: 2}}` in quanto bar è un riferimento a foo. Ma perché foo.x è undefined mentre bar.x non lo è?
 
 ### 💡 Spiegazione:
 
@@ -1592,7 +1592,7 @@ Per farla breve, se `null` che è minore di `0` è `false`, allora `null >= 0` �
 
 L'istinto potrebbe farci pensare che IE11 sia corretto e Firefox/Chrome sbaglino, la realtà è che Firefox/Chrome stanno rispettando gli standard per i numeri in virgola mobile (IEEE-754 Floating Point), mentre IE11 sta evitando di rispettarli (quello che probabilmente è) uno sforzo per restituire dei risultati più chiari.
 
-Possiamo vedere perchè questo accade con un semplice test:
+Possiamo vedere perché questo accade con un semplice test:
 
 ```js
 // Confermare lo strano risultato dell'arrotondamento per difetto di 5
@@ -1626,7 +1626,7 @@ Math.min() > Math.max(); // -> true
 
 ### 💡 Spiegazione:
 
-- [Perchè Math.max() è più piccolo di Math.min()?](https://charlieharvey.org.uk/page/why_math_max_is_less_than_math_min) by Charlie Harvey
+- [Perché Math.max() è più piccolo di Math.min()?](https://charlieharvey.org.uk/page/why_math_max_is_less_than_math_min) by Charlie Harvey
 
 ## Confrontare `null` con `0`
 
